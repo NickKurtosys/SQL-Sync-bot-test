@@ -19,7 +19,7 @@ Once you've finished setting up your Slack App and saved the `Client ID`, `Clien
 
 ![Start](https://cloud.githubusercontent.com/assets/367275/19364564/edb43efa-914b-11e6-9265-d33122bf5f9a.png)
 
-Once your project has started, go to the **Teams** tab and add your new Slack App to one of your Slack teams.
+Once your project has started, go to the **Teams** tab and add your fnew Slack App to one of your Slack teams.
 
 ![Add Team](https://cloud.githubusercontent.com/assets/367275/19364343/012e4922-914b-11e6-8f0a-bb020b016fd2.png)
 
