@@ -116,7 +116,7 @@ slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
 // attach Slapp to express server
 var server = slapp.attachToExpress(express())
 
-slapp.message('*SYNC TABLE ALERT*:', (msg) => {
+slapp.message('SYNC TABLE ALERT', (msg) => {
   msg.say('({
     "attachments": [
         {
