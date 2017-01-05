@@ -116,6 +116,9 @@ slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
 // attach Slapp to express server
 var server = slapp.attachToExpress(express())
 
+slapp.message('SYNC ISSUE RESOLVED', (msg) => {
+msg.say('Thank you!')})
+
 slapp.message('SYNC TABLE ALERT', (msg) => {
   msg.say({
 	text: '',
@@ -138,8 +141,8 @@ slapp.message('SYNC TABLE ALERT', (msg) => {
     ]
 } )
 })
-slapp.action('sync_ack', 'answer', (msg, value) => {
-  msg.respond(msg.body.response_url, `${value} is looking into the sync alert!`)
+slapp.action('sync_ack', 'acknowledge', (msg, user) => {
+  msg.respond(msg.body.response_url, *${JSON.stringify(user.name)has acknowledged they are looking into the sync alert!*`)
 })
 // start http server
 server.listen(port, (err) => {
