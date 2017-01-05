@@ -118,7 +118,7 @@ var server = slapp.attachToExpress(express())
 
 slapp.message('SYNC TABLE ALERT', (msg) => {
   msg.say('({
-	text: ''
+	text: '',
     attachments: [
         {
             text: 'I have detected an out of sync issue from Slackbot, who is working on it?',
