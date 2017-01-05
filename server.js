@@ -117,7 +117,7 @@ slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
 var server = slapp.attachToExpress(express())
 
 slapp.message('SYNC TABLE ALERT', (msg) => {
-  msg.say('({
+  msg.say({
 	text: '',
     attachments: [
         {
@@ -136,7 +136,7 @@ slapp.message('SYNC TABLE ALERT', (msg) => {
             ]
         }
     ]
-} )')
+} )
 })
 slapp.action('sync_ack', 'answer', (msg, value) => {
   msg.respond(msg.body.response_url, `${value} is looking into the sync alert!`)
