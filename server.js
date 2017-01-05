@@ -118,24 +118,28 @@ var server = slapp.attachToExpress(express())
 
 slapp.message('SYNC TABLE ALERT', (msg) => {
   msg.say('({
-    "attachments": [
+	text: ''
+    attachments: [
         {
-            "text": "I have detected an out of sync issue from Slackbot, who is working on it?",
-            "fallback": "You are unable to choose a game",
-            "callback_id": "sync_ack",
-            "color": "#3AA3E3",
-            "attachment_type": "default",
-            "actions": [
+            text: 'I have detected an out of sync issue from Slackbot, who is working on it?',
+            fallback: 'You are unable to choose a game',
+            callback_id: 'sync_ack',
+            color: '#3AA3E3',
+            attachment_type: 'default',
+            actions: [
                 {
-                    "name": "acknowledge",
-                    "text": "Acknowledge",
-                    "type": "button",
-                    "value": "acknowledge"
+                    'name': 'acknowledge',
+                    'text': 'Acknowledge',
+                    'type': 'button',
+                    'value': 'acknowledge'
                 }
             ]
         }
     ]
 } )')
+})
+slapp.action('sync_ack', 'answer', (msg, value) => {
+  msg.respond(msg.body.response_url, `${value} is looking into the sync alert!`)
 })
 // start http server
 server.listen(port, (err) => {
