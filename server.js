@@ -116,8 +116,26 @@ slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
 // attach Slapp to express server
 var server = slapp.attachToExpress(express())
 
-slapp.message('goodnight', (msg) => {
-  msg.say('sweet dreams :crescent_moon: ')
+slapp.message('*SYNC TABLE ALERT*:', (msg) => {
+  msg.say('({
+    "attachments": [
+        {
+            "text": "I have detected an out of sync issue from Slackbot, who is working on it?",
+            "fallback": "You are unable to choose a game",
+            "callback_id": "sync_ack",
+            "color": "#3AA3E3",
+            "attachment_type": "default",
+            "actions": [
+                {
+                    "name": "acknowledge",
+                    "text": "Acknowledge",
+                    "type": "button",
+                    "value": "acknowledge"
+                }
+            ]
+        }
+    ]
+} )')
 })
 // start http server
 server.listen(port, (err) => {
