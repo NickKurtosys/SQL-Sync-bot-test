@@ -116,6 +116,9 @@ slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
 // attach Slapp to express server
 var server = slapp.attachToExpress(express())
 
+slapp.message('goodnight', (msg) => {
+  msg.say('sweet dreams :crescent_moon: ')
+})
 // start http server
 server.listen(port, (err) => {
   if (err) {
