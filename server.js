@@ -143,7 +143,7 @@ slapp.message('SYNC TABLE ALERT', (msg) => {
 })
 slapp.action('sync_ack', 'acknowledge', (msg, user) => {
   msg.respond(msg.body.response_url, `*Someone has acknowledged they are looking into the sync alert!*`)
-})
+},console.log(JSON.Stringify(msg))
 // start http server
 server.listen(port, (err) => {
   if (err) {
