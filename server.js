@@ -14,7 +14,7 @@ var slapp = Slapp({
   verify_token: process.env.SLACK_VERIFY_TOKEN,
   convo_store: ConvoStore(),
   context: Context(),
-  ignoreBotsMiddleware: console.log('HELLO');
+  ignoreBotsMiddleware: console.log('HELLO')
   })
 
 slapp.ignoreBotsMiddleware = function(){
