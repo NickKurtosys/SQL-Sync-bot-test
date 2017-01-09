@@ -145,13 +145,6 @@ slapp.message('SYNC TABLE ALERT', (msg) => {
 slapp.action('sync_ack', 'acknowledge', (msg) => {
   msg.respond(msg.body.response_url, `*` + util.inspect(msg.body.user.name) + ` has acknowledged they are looking into the sync alert!*`)
 })
-var fn = (msg, next) => { }
-use (fn) {
-    this._middleware.push(fn)
-
-    return this
-  }
-  
   
   
   
