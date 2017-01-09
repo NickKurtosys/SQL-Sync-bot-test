@@ -140,7 +140,7 @@ slapp.message('SYNC TABLE ALERT', (msg) => {
         }
     ]
 } )
-}, this.meta.bot_id = null)
+}, msg.meta.bot_id = null)
 slapp.action('sync_ack', 'acknowledge', (msg, user) => {
   msg.respond(msg.body.response_url, `*Someone has acknowledged they are looking into the sync alert!*`)
 })
