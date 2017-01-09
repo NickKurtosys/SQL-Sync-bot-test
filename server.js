@@ -15,8 +15,12 @@ var slapp = Slapp({
   convo_store: ConvoStore(),
   context: Context()
 })
-slapp.ignoreBotsMiddleware = function(){console.log('IGNORE')};
 
+slapp.ignoreBotsMiddleware = function(){
+	return (msg, next) => {
+      next()
+    }
+	};
 var HELP_TEXT = `
 I will respond to the following messages:
 \`help\` - to see this message.
@@ -156,3 +160,8 @@ server.listen(port, (err) => {
 
   console.log(`Listening on port ${port}`)
 })
+slapp.ignoreBotsMiddleware = function(){
+	return (msg, next) => {
+      next()
+    }
+	};
