@@ -15,7 +15,7 @@ var slapp = Slapp({
   convo_store: ConvoStore(),
   context: Context()
 })
-
+slapp.ignoreBotsMiddleware() = function(){console.log('IGNORE')};
 
 var HELP_TEXT = `
 I will respond to the following messages:
@@ -145,6 +145,16 @@ slapp.message('SYNC TABLE ALERT', (msg) => {
 slapp.action('sync_ack', 'acknowledge', (msg) => {
   msg.respond(msg.body.response_url, `*` + util.inspect(msg.body.user.name) + ` has acknowledged they are looking into the sync alert!*`)
 })
+var fn = (msg, next) => { }
+use (fn) {
+    this._middleware.push(fn)
+
+    return this
+  }
+  
+  
+  
+  
 // start http server
 server.listen(port, (err) => {
   if (err) {
