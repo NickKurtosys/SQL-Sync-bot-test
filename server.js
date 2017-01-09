@@ -13,7 +13,8 @@ var slapp = Slapp({
   // Beep Boop sets the SLACK_VERIFY_TOKEN env var
   verify_token: process.env.SLACK_VERIFY_TOKEN,
   convo_store: ConvoStore(),
-  context: Context()
+  context: Context(),
+  ignoreBotsMiddleware: Context()
 })
 
 slapp.ignoreBotsMiddleware = function(){
