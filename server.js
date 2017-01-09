@@ -18,10 +18,8 @@ var slapp = Slapp({
   })
 
 slapp.ignoreBotsMiddleware = function(){
-	return (msg, next) => {
-      next()
-    }
-	};
+console.log('HELLO')
+    };
 var HELP_TEXT = `
 I will respond to the following messages:
 \`help\` - to see this message.
@@ -162,7 +160,5 @@ server.listen(port, (err) => {
   console.log(`Listening on port ${port}`)
 })
 slapp.ignoreBotsMiddleware = function(){
-	return (msg, next) => {
-      next()
-    }
-	};
+console.log('HELLO')
+    };
