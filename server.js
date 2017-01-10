@@ -14,12 +14,10 @@ var slapp = Slapp({
   verify_token: process.env.SLACK_VERIFY_TOKEN,
   convo_store: ConvoStore(),
   context: Context(),
-  ignoreBotsMiddleware: console.log('HELLO')
+  ignoreBots: false
   })
 
-slapp.ignoreBotsMiddleware = function(){
-console.log('HELLO')
-    };
+
 var HELP_TEXT = `
 I will respond to the following messages:
 \`help\` - to see this message.
@@ -159,6 +157,3 @@ server.listen(port, (err) => {
 
   console.log(`Listening on port ${port}`)
 })
-slapp.ignoreBotsMiddleware = function(){
-console.log('HELLO')
-    };
