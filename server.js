@@ -122,7 +122,7 @@ slapp.message('SYNC ISSUE RESOLVED', (msg) => {
 msg.say('Thank you!')})
 
 slapp.message('SYNC TABLE ALERT', (msg) => {
-	if msg.isBot() {console.log('YO')}
+	if (msg.isBot()) {console.log('YO')}
   msg.say({
 	text: '',
     attachments: [
