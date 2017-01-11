@@ -39,6 +39,8 @@ slapp.message('help', ['mention', 'direct_message'], (msg) => {
 // "Conversation" flow that tracks state - kicks off when user says hi, hello or hey
 slapp
   .message('^(hi|hello|hey)$', ['direct_mention', 'direct_message'], (msg, text) => {
+	  console.log(message)
+	  console.log(msg)
     msg
       .say(`${text}, how are you?`)
       // sends next event from user to this route, passing along state
@@ -121,9 +123,11 @@ var server = slapp.attachToExpress(express())
 slapp.message('SYNC ISSUE RESOLVED', (msg) => {
 msg.say('Thank you!')})
 
+slapp.message('.*',(msg) =>{})
+
 slapp.message('SYNC TABLE ALERT', (msg) => {
   msg.say({
-	text: '',
+	text: 'test',
     attachments: [
         {
             text: 'I have detected an out of sync issue from Slackbot, who is working on it?',
