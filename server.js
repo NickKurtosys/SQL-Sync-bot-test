@@ -16,7 +16,7 @@ var slapp = Slapp({
   context: Context(),
   })
 
-
+console.log(slapp.ignoreBots)
 var HELP_TEXT = `
 I will respond to the following messages:
 \`help\` - to see this message.
@@ -118,6 +118,7 @@ slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
 var server = slapp.attachToExpress(express())
 
 slapp.message('SYNC ISSUE RESOLVED', (msg) => {
+	console.log(slapp.ignoreBots)
 msg.say('Thank you!')})
 
 slapp.message('SYNC TABLE ALERT', (msg) => {
