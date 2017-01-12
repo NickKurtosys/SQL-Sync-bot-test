@@ -123,8 +123,6 @@ var server = slapp.attachToExpress(express())
 slapp.message('SYNC ISSUE RESOLVED', (msg) => {
 msg.say('Thank you!')})
 
-slapp.message('.*',(msg) =>{})
-
 slapp.message('SYNC TABLE ALERT', (msg) => {
   msg.say({
 	text: 'test',
