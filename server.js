@@ -125,7 +125,7 @@ msg.say('Thank you!')})
 
 slapp.message('SYNC TABLE ALERT', (msg) => {
   msg.say({
-	text: 'test',
+	text: '',
     attachments: [
         {
             text: 'I have detected an out of sync issue from Slackbot, who is working on it?',
